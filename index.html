@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Belajar Dom and Bom</title>
+
+    <style>
+      .pIsiParagrafh {
+        margin-left: 70px;
+        margin-right: 30px;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: justify;
+      }
+
+      .pJudul {
+        margin-left: 30px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 28px;
+        line-height: 1.5;
+        font-weight: bold;
+        color: #2c3e50; /* abu gelap modern */
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: uppercase; /* opsional: UBAH JADI HURUF BESAR SEMUA */
+        border-bottom: 2px solid #2980b9;/* garis bawah untuk aksen */
+        padding-bottom: 5px;
+        width: fit-content;  /* Membuat border bottom sesuai dengan ukuran content judul */
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <article>
+          <p class="pJudul" id="Browser">1. Browser Object Model (BOM)</p>
+
+          <p class="pIsiParagrafh">
+            Cara JavaScript Mengontrol Website dan Browser Setelah membaca
+            materi sebelumnya, maka akan muncul pertanyaan “Bagaimana JavaScript
+            mengontrol sebuah website atau browser?” Jawabannya ada dua, dan
+            keduanya akan kita bahas di modul ini, yakni melalui Browser Object
+            Model (BOM) dan Document Object Model (DOM). Yang pertama adalah
+            BOM. Dengan BOM, kita dapat memberikan perintah-perintah khusus ke
+            browser, misalnya melalui sebuah 'atribut' khusus milik browser
+            yakni 'window' (akan kita bahas di materi selanjutnya) sehingga kita
+            bisa membuat browser menampilkan pesan pop-up. Caranya yakni
+            menjalankan method alert() pada console milik browser. Berikut
+            contohnya:
+          </p>
+
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 25px;
+            "
+          >
+            <img
+              style="
+                border: solid 10px black;
+                border-radius: 20px;
+                margin: 25px;
+                height: 400px;
+                width: 1200px;
+              "
+              src="/assets/bomAlert.png"
+              alt="Bom"
+            />
+          </div>
+
+          <p class="pIsiParagrafh">
+            Selain method alert(), objek window juga memiliki method-method
+            lainnya, seperti prompt, console, dsb. Tenang, kita akan berjelajah
+            lebih jauh pada modul-modul selanjutnya.
+          </p>
+
+          <p class="pJudul">2. Document Object Model (DOM)</p>
+          <p class="pIsiParagrafh">
+            DOM sama seperti BOM. Perbedaannya adalah kita menggunakan global
+            objek bernama document. Melalui global objek ini, kita bisa
+            menangkap seluruh elemen dalam dokumen HTML guna memanipulasi konten
+            HTML melalui method getElementById(). Method ini akan menangkap
+            elemen berdasarkan value dari atribut id. Sebagai contoh, kita
+            mengubah konten elemen HTML berikut ini.
+          </p>
+
+          <div class="pictureDua">
+            <img
+              style="
+                border: solid 10px black;
+                border-radius: 20px;
+                margin: 25px;
+                height: 400px;
+                width: 1200px;
+              "
+              src="/assets/domBrowser.png"
+              alt="Dom"
+            />
+          </div>
+
+          <p class="pIsiParagrafh">
+            Pada contoh yang kita pelajari di atas merupakan contoh yang sangat
+            sederhana. Kita dapat melakukan lebih banyak hal lainnya, seperti
+            mengubah konten elemen, memberikan event tertentu pada elemen, dan
+            sebagainya.
+          </p>
+
+          <p class="pIsiParagrafh">
+            Melalui contoh di atas, kita telah menggunakan console milik browser
+            untuk menjalankan kode program JavaScript. Tentunya jika kita
+            mengembangkan website tidak menggunakan pendekatan seperti ini. Ada
+            cara lain dalam menulis kode JavaScript, yakni melalui berkas HTML
+            secara langsung.
+          </p>
+
+          <p class="pIsiParagrafh">
+            Di materi berikutnya, kita pelajari cara menyematkan kode JavaScript
+            dengan dokumen HTML. Sudah penasaran, kan? Ayo kita menuju ke
+            submodul berikutnya.
+          </p>
+
+          <p class="pIsiParagrafh">
+            Pada contoh yang kita pelajari di atas merupakan contoh yang sangat
+            sederhana. Kita dapat melakukan lebih banyak hal lainnya, seperti
+            mengubah konten elemen, memberikan event tertentu pada elemen, dan
+            sebagainya. Melalui contoh di atas, kita telah menggunakan console
+            milik browser untuk menjalankan kode program JavaScript. Tentunya
+            jika kita mengembangkan website tidak menggunakan pendekatan seperti
+            ini. Ada cara lain dalam menulis kode JavaScript, yakni melalui
+            berkas HTML secara langsung. Di materi berikutnya, kita pelajari
+            cara menyematkan kode JavaScript dengan dokumen HTML. Sudah
+            penasaran, kan? Ayo kita menuju ke submodul berikutnya.
+          </p>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
