@@ -7,7 +7,7 @@
     <title>Belajar Dom and Bom</title>
 
     <style>
-      .pIsiParagrafh {
+      .pIsiParagraf {
         margin: 0 30px 1.5em 70px; /* top=0, right=30px, bottom=1.5em, left=70px */
         font-size: 1.125rem; /* 18px secara default, lebih fleksibel */
         line-height: 1.75; /* untuk readability yang lebih baik */
@@ -54,7 +54,7 @@
         <article>
           <p class="pJudul" id="Browser">1. Browser Object Model (BOM)</p>
 
-          <p class="pIsiParagrafh">
+          <p class="pIsiParagraf">
             Cara JavaScript Mengontrol Website dan Browser Setelah membaca
             materi sebelumnya, maka akan muncul pertanyaan “Bagaimana JavaScript
             mengontrol sebuah website atau browser?” Jawabannya ada dua, dan
@@ -72,14 +72,14 @@
             <img src="/assets/bomAlert.png" alt="Bom" />
           </div>
 
-          <p class="pIsiParagrafh">
+          <p class="pIsiParagraf">
             Selain method alert(), objek window juga memiliki method-method
             lainnya, seperti prompt, console, dsb. Tenang, kita akan berjelajah
             lebih jauh pada modul-modul selanjutnya.
           </p>
 
           <p class="pJudul">2. Document Object Model (DOM)</p>
-          <p class="pIsiParagrafh">
+          <p class="pIsiParagraf">
             DOM sama seperti BOM. Perbedaannya adalah kita menggunakan global
             objek bernama document. Melalui global objek ini, kita bisa
             menangkap seluruh elemen dalam dokumen HTML guna memanipulasi konten
@@ -92,14 +92,14 @@
             <img src="/assets/domBrowser.png" alt="Dom" />
           </div>
 
-          <p class="pIsiParagrafh">
+          <p class="pIsiParagraf">
             Pada contoh yang kita pelajari di atas merupakan contoh yang sangat
             sederhana. Kita dapat melakukan lebih banyak hal lainnya, seperti
             mengubah konten elemen, memberikan event tertentu pada elemen, dan
             sebagainya.
           </p>
 
-          <p class="pIsiParagrafh">
+          <p class="pIsiParagraf">
             Melalui contoh di atas, kita telah menggunakan console milik browser
             untuk menjalankan kode program JavaScript. Tentunya jika kita
             mengembangkan website tidak menggunakan pendekatan seperti ini. Ada
@@ -107,13 +107,13 @@
             secara langsung.
           </p>
 
-          <p class="pIsiParagrafh">
+          <p class="pIsiParagraf">
             Di materi berikutnya, kita pelajari cara menyematkan kode JavaScript
             dengan dokumen HTML. Sudah penasaran, kan? Ayo kita menuju ke
             submodul berikutnya.
           </p>
 
-          <p class="pIsiParagrafh">
+          <p class="pIsiParagraf">
             Pada contoh yang kita pelajari di atas merupakan contoh yang sangat
             sederhana. Kita dapat melakukan lebih banyak hal lainnya, seperti
             mengubah konten elemen, memberikan event tertentu pada elemen, dan
@@ -127,6 +127,74 @@
           </p>
         </article>
       </section>
+
+      <section>
+        <p class="pJudul">Menjalankan JavaScript di Website</p>
+        <p class="pIsiParagraf">
+          Ketika membuat berkas HTML, tentu kita sudah tidak asing dengan tag
+          HTML, bukan? Contohnya, seperti tag
+          <strong><code>&lt;html&gt;</code></strong
+          >, <strong><code>&lt;style&gt;</code></strong
+          >, <strong><code>&lt;p&gt;</code></strong
+          >, <strong><code>&lt;div&gt;</code></strong
+          >, beserta tag-tag lainnya. Nah, jika kita sudah familier dengan gaya
+          penulisan tag dalam sebuah berkas HTML, menambahkan kode JavaScript ke
+          dalam berkas HTML akan lebih mudah. Mengapa demikian? Karena kita
+          hanya perlu menggunakan tag
+          <strong><code>&lt;script&gt;</code></strong> sebagai pembuka dan tag
+          <strong><code>&lt;/script&gt;</code></strong> sebagai penutup.
+          <br /><br />
+          Ada dua cara untuk memasukkan kode JavaScript ke dalam berkas HTML
+          kita, yakni secara internal dan eksternal. Hmm, tampaknya terdengar
+          familier? Betul! Hal ini mirip dengan cara menyematkan berkas CSS ke
+          dokumen HTML, bukan?
+          <br /><br />
+          Andaikan kita ingin meminta input dari user pada sebuah box yang
+          muncul. Input tersebut berisi nama dari user dan akan kita munculkan
+          kembali nama dari user tersebut pada sebuah box. Berikut adalah
+          bentuknya dalam kode JavaScript:
+        </p>
+
+        <div class="picture">
+          <img src="/assets//3.png" alt="gambarTiga" />
+        </div>
+
+        <p id="internal" class="pJudul">Internal JavaScript</p>
+        <p class="pIsiParagraf">
+          Pertama, kita akan membahas cara menulis sintaks untuk memasukkan kode
+          JavaScript secara internal terlebih dahulu. Caranya cukup mudah
+          layaknya menulis CSS secara internal pada berkas HTML. Cukup tuliskan
+          kode JavaScript kita diantara tag pembuka dan penutup (
+          <strong><code>&lt;script&gt;</code></strong>
+          dan;
+          <strong><code>&lt;/script&gt;</code></strong>
+          ). Contohnya adalah sebagai berikut.
+        </p>
+
+        <div class="picture">
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              justify-content: baseline;
+            "
+          >
+            <img src="/assets/4.png" alt="eksternal" />
+            <p class="pIsiParagraf">
+              <strong>
+                Saya langsung jalankan code di atas dengan contoh yang lain
+                dalam bentuk code untuk memproses browser object document.
+              </strong>
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <script>
+      // ini untuk contoh dari browser object model
+      // const judul = prompt("judul baru");
+      // alert("ini adalah, " + judul);
+    </script>
   </body>
 </html>
