@@ -1,0 +1,162 @@
+* {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /* cegah scroll horizontal dari margin left 175 yang diterapkan di layar 768 dari profile.logo */
+}
+
+body {
+  background-color: #ecf0f1; /* light gray */
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  background-color: rgba(52, 73, 94, 0.85);
+  /*transparannavy*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  gap: 80px;
+  /*Shadowprofesional*/
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(8px);
+  /*efekkacaburam(opsional)*/
+  border-radius: 7;
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  -ms-border-radius: 7;
+  -o-border-radius: 7;
+}
+
+/* Logo gambar dan nama brand didalam navbar */
+.profile-logo {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+.profile-logo img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid black;
+  margin: 10px;
+}
+
+.nama-logo {
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  flex-shrink: 0; /* Jangan diperkecil */
+  white-space: nowrap; /* Jangan pecah baris */
+}
+
+/* button didalam navbar */
+.ul-navbar {
+  display: flex;
+  width: 80%;
+  gap: 10px;
+  align-items: center;
+}
+
+.li-navbar {
+  background-color: #1abc9c;
+  list-style-type: none;
+  width: 50px;
+  height: 25px;
+  padding: 10px 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600px;
+  cursor: pointer;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.li-navbar:hover {
+  background-color: #16a085;
+  transform: scale(1.03);
+}
+
+.section {
+  padding-top: 100px;
+}
+
+/* picture */
+.picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picture img {
+  border: solid 10px #111827;
+  border-radius: 20px;
+  margin: 25px;
+  height: 400px;
+  width: 1200px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .main {
+    padding-top: 75px;
+  }
+
+  .pIsiParagrafh {
+    margin: 0 30px 1.5em 35px;
+  }
+  .profile-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    margin-left: 175px;
+  }
+  .nama-logo {
+    flex: auto;
+    flex-shrink: 0; /* Jangan diperkecil */
+    white-space: nowrap; /* Jangan pecah baris */
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 0;
+    height: auto;
+  }
+
+  .ul-navbar {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .picture {
+    text-align: center;
+  }
+
+  .picture img {
+    border: solid 10px #111827;
+    border-radius: 20px;
+    margin: 25px auto; /* bottom,top = 25 dan right,left = auto  */
+    max-width: 80%;
+    height: auto;
+    display: block;
+  }
+}
