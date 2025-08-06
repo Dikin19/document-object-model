@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bean Bliss Coffee Shop</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8f5f2;
+            color: #3e2723;
+        }
+        header {
+            background: #6f4e37;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        nav {
+            margin-top: 1rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 1rem;
+            background: #fff3e0;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            text-align: center;
+        }
+        .cta-btn {
+            background: #6f4e37;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .cta-btn:hover {
+            background: #4e342e;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem 1rem;
+            background: #f8f5f2;
+        }
+        .feature {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            max-width: 250px;
+            text-align: center;
+        }
+        .feature h3 {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .menu {
+            background: #fff;
+            padding: 3rem 1rem;
+        }
+        .menu h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #6f4e37;
+        }
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .category-btn {
+            background: #f8f5f2;
+            border: 2px solid #6f4e37;
+            color: #6f4e37;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        .category-btn:hover, .category-btn.active {
+            background: #6f4e37;
+            color: #fff;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .menu-item {
+            background: #fff3e0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .menu-item:hover {
+            transform: translateY(-2px);
+        }
+        .menu-item h3 {
+            color: #6f4e37;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        .menu-item .price {
+            font-weight: bold;
+            color: #d84315;
+            font-size: 1.1rem;
+            float: right;
+        }
+        .menu-item p {
+            margin: 0.5rem 0;
+            color: #5d4037;
+            line-height: 1.4;
+        }
+        .menu-item .size-options {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .size-option {
+            background: #6f4e37;
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: none;
+            cursor: pointer;
+        }
+        .size-option:hover {
+            background: #4e342e;
+        }
+        .menu-category {
+            display: none;
+        }
+        .menu-category.active {
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: #6f4e37;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bean Bliss Coffee Shop</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Menu</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Welcome to Bean Bliss</h1>
+        <p>Your daily dose of freshly brewed coffee, cozy ambiance, and friendly faces. Start your day with us!</p>
+        <button class="cta-btn">View Menu</button>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <h3>Freshly Brewed</h3>
+            <p>Enjoy coffee made from the finest beans, roasted and brewed to perfection every day.</p>
+        </div>
+        <div class="feature">
+            <h3>Cozy Atmosphere</h3>
+            <p>Relax, work, or catch up with friends in our warm and inviting space.</p>
+        </div>
+        <div class="feature">
+            <h3>Delicious Pastries</h3>
+            <p>Pair your coffee with our selection of homemade pastries and snacks.</p>
+        </div>
+    </section>
+    
+    <section class="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-categories">
+            <button class="category-btn active" onclick="showCategory('coffee')">Coffee</button>
+            <button class="category-btn" onclick="showCategory('pastries')">Pastries</button>
+            <button class="category-btn" onclick="showCategory('cold-drinks')">Cold Drinks</button>
+            <button class="category-btn" onclick="showCategory('snacks')">Snacks</button>
+        </div>
+        
+        <div id="coffee" class="menu-category active">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Espresso <span class="price">$2.50</span></h3>
+                    <p>Rich, bold shot of perfectly extracted coffee with a beautiful crema on top.</p>
+                    <div class="size-options">
+                        <button class="size-option">Single</button>
+                        <button class="size-option">Double</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Cappuccino <span class="price">$4.25</span></h3>
+                    <p>Classic Italian coffee with steamed milk and thick, velvety foam. Dusted with cocoa powder.</p>
+                    <div class="size-options">
+                        <button class="size-option">Small</button>
+                        <button class="size-option">Medium</button>
+                        <button class="size-option">Large</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Latte <span class="price">$4.50</span></h3>
+                    <p>Smooth espresso with steamed milk and a light layer of foam. Perfect for latte art.</p>
+                    <div class="size-options">
+                        <button class="size-option">Small</button>
+                        <button class="size-option">Medium</button>
+                        <button class="size-option">Large</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Americano <span class="price">$3.75</span></h3>
+                    <p>Bold espresso shots diluted with hot water for a clean, strong coffee taste.</p>
+                    <div class="size-options">
+                        <button class="size-option">Small</button>
+                        <button class="size-option">Medium</button>
+                        <button class="size-option">Large</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Mocha <span class="price">$5.25</span></h3>
+                    <p>Rich chocolate and espresso blend with steamed milk and whipped cream topping.</p>
+                    <div class="size-options">
+                        <button class="size-option">Small</button>
+                        <button class="size-option">Medium</button>
+                        <button class="size-option">Large</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Caramel Macchiato <span class="price">$5.50</span></h3>
+                    <p>Vanilla-flavored steamed milk with espresso and caramel drizzle on top.</p>
+                    <div class="size-options">
+                        <button class="size-option">Small</button>
+                        <button class="size-option">Medium</button>
+                        <button class="size-option">Large</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="pastries" class="menu-category">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Croissant <span class="price">$3.25</span></h3>
+                    <p>Buttery, flaky French pastry baked fresh daily. Available plain or with chocolate.</p>
+                    <div class="size-options">
+                        <button class="size-option">Plain</button>
+                        <button class="size-option">Chocolate</button>
+                        <button class="size-option">Almond</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Blueberry Muffin <span class="price">$2.95</span></h3>
+                    <p>Moist, fluffy muffin packed with fresh blueberries and a hint of lemon zest.</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Cinnamon Roll <span class="price">$3.75</span></h3>
+                    <p>Warm, gooey cinnamon roll with rich cream cheese frosting drizzled on top.</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Banana Bread <span class="price">$2.50</span></h3>
+                    <p>Homemade banana bread with walnuts, perfectly moist and lightly sweetened.</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Danish Pastry <span class="price">$3.50</span></h3>
+                    <p>Light, airy pastry with your choice of fruit filling or cream cheese.</p>
+                    <div class="size-options">
+                        <button class="size-option">Cherry</button>
+                        <button class="size-option">Apple</button>
+                        <button class="size-option">Cream Cheese</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Scone <span class="price">$2.75</span></h3>
+                    <p>Traditional British scone served with jam and clotted cream on the side.</p>
+                    <div class="size-options">
+                        <button class="size-option">Plain</button>
+                        <button class="size-option">Cranberry</button>
+                        <button class="size-option">Chocolate Chip</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="cold-drinks" class="menu-category">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Iced Coffee <span class="price">$3.50</span></h3>
+                    <p>Cold-brewed coffee served over ice with your choice of milk and sweetener.</p>
+                    <div class="size-options">
+                        <button class="size-option">Small</button>
+                        <button class="size-option">Medium</button>
+                        <button class="size-option">Large</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Frappuccino <span class="price">$4.75</span></h3>
+                    <p>Blended iced coffee drink with milk and ice, topped with whipped cream.</p>
+                    <div class="size-options">
+                        <button class="size-option">Vanilla</button>
+                        <button class="size-option">Caramel</button>
+                        <button class="size-option">Mocha</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Cold Brew <span class="price">$4.25</span></h3>
+                    <p>Smooth, less acidic coffee steeped in cold water for 12+ hours.</p>
+                    <div class="size-options">
+                        <button class="size-option">Small</button>
+                        <button class="size-option">Medium</button>
+                        <button class="size-option">Large</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Iced Tea <span class="price">$2.95</span></h3>
+                    <p>Refreshing iced tea available in various flavors, lightly sweetened.</p>
+                    <div class="size-options">
+                        <button class="size-option">Black Tea</button>
+                        <button class="size-option">Green Tea</button>
+                        <button class="size-option">Peach</button>
+                        <button class="size-option">Lemon</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Smoothie <span class="price">$5.25</span></h3>
+                    <p>Fresh fruit smoothie blended with yogurt and your choice of protein powder.</p>
+                    <div class="size-options">
+                        <button class="size-option">Berry Blast</button>
+                        <button class="size-option">Tropical</button>
+                        <button class="size-option">Green Machine</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Lemonade <span class="price">$3.25</span></h3>
+                    <p>Fresh-squeezed lemonade, perfectly balanced sweet and tart.</p>
+                    <div class="size-options">
+                        <button class="size-option">Regular</button>
+                        <button class="size-option">Strawberry</button>
+                        <button class="size-option">Mint</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="snacks" class="menu-category">
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <h3>Avocado Toast <span class="price">$6.50</span></h3>
+                    <p>Smashed avocado on artisan sourdough with sea salt, red pepper flakes, and lime.</p>
+                    <div class="size-options">
+                        <button class="size-option">Classic</button>
+                        <button class="size-option">With Egg</button>
+                        <button class="size-option">With Tomato</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Bagel & Cream Cheese <span class="price">$4.25</span></h3>
+                    <p>Fresh bagel toasted to perfection with your choice of cream cheese spread.</p>
+                    <div class="size-options">
+                        <button class="size-option">Plain</button>
+                        <button class="size-option">Everything</button>
+                        <button class="size-option">Sesame</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Granola Bowl <span class="price">$5.75</span></h3>
+                    <p>House-made granola with Greek yogurt, fresh berries, and honey drizzle.</p>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Sandwich <span class="price">$7.50</span></h3>
+                    <p>Fresh sandwich made with premium ingredients on artisan bread.</p>
+                    <div class="size-options">
+                        <button class="size-option">Turkey Club</button>
+                        <button class="size-option">Ham & Swiss</button>
+                        <button class="size-option">Veggie</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Soup of the Day <span class="price">$4.95</span></h3>
+                    <p>Freshly made soup served with crusty bread. Ask about today's selection!</p>
+                    <div class="size-options">
+                        <button class="size-option">Cup</button>
+                        <button class="size-option">Bowl</button>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <h3>Cookies <span class="price">$1.95</span></h3>
+                    <p>Freshly baked cookies made with premium ingredients and lots of love.</p>
+                    <div class="size-options">
+                        <button class="size-option">Chocolate Chip</button>
+                        <button class="size-option">Oatmeal Raisin</button>
+                        <button class="size-option">Sugar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Bean Bliss Coffee Shop. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function showCategory(categoryName) {
+            // Hide all categories
+            const categories = document.querySelectorAll('.menu-category');
+            categories.forEach(category => {
+                category.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected category
+            document.getElementById(categoryName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+        
+        // Add smooth scrolling to "View Menu" button
+        document.querySelector('.cta-btn').addEventListener('click', function() {
+            document.querySelector('.menu').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+        
+        // Add click functionality to navigation menu link
+        const menuNavLink = document.querySelector('nav a[href="#"]');
+        if (menuNavLink && menuNavLink.textContent === 'Menu') {
+            menuNavLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('.menu').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
+</body>
+</html>

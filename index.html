@@ -34,6 +34,7 @@
   </head>
   <body>
     <header>
+      <!-- Navbar start -->
       <nav class="navbar">
         <div class="profile-logo">
           <img src="/assets/domBrowser.png" alt="profile" />
@@ -48,8 +49,11 @@
           <li class="li-navbar">pageTwo</li>
         </ul>
       </nav>
+      <!-- Navbar end -->
     </header>
+
     <main class="main">
+      <!-- section 1 start -->
       <section class="section">
         <article>
           <p class="pJudul" id="Browser">1. Browser Object Model (BOM)</p>
@@ -127,7 +131,9 @@
           </p>
         </article>
       </section>
+      <!-- section 1 end -->
 
+      <!-- section 2 -->
       <section>
         <p class="pJudul">Menjalankan JavaScript di Website</p>
         <p class="pIsiParagraf">
@@ -188,11 +194,95 @@
             </p>
           </div>
         </div>
-      </section>
-    </main>
 
+        <p class="pJudul">Eksternal JavaScript</p>
+        <p class="pIsiParagraf">
+          Berikutnya kita akan membahas bagaimana memasukkan kode JavaScript ke
+          dalam berkas HTML secara eksternal. Sama seperti memasukkan CSS secara
+          eksternal pada berkas HTML, kita perlu menulis lokasi berkas
+          berekstensi .js (dot js) pada atribut src di dalam tag
+          <strong><code>&lt;script&gt;</code></strong> alias tag pembuka.
+          Sebagai contoh, kita akan memisahkan kode JavaScript sebelumnya pada
+          berkas terpisah yang bernama welcome.js. Dengan demikian, untuk
+          memasukkan welcome.js ke dalam berkas index.html dapat dituliskan
+          seperti berikut.
+        </p>
+
+        <div class="picture">
+          <img src="/assets/5.png" alt="eksternal" />
+        </div>
+        <div class="picture">
+          <div
+            style="display: flex; flex-direction: column; align-items: center"
+          >
+            <img src="/assets/6.png" alt="eksternal1" />
+            <p class="pIsiParagraf">
+              <strong>
+                Saya langsung jalankan code di atas dengan contoh yang lain
+                dalam bentuk code untuk memproses browser object document.
+                membuat file js untuk melakukan manipulation.
+              </strong>
+            </p>
+          </div>
+        </div>
+
+        <p class="pIsiParagraf">
+          Pada tahap ini, pasti kita akan bertanya-tanya, "Kenapa tidak
+          menggunakan JavaScript internal saja? Padahal kan sama saja dan cara
+          eksternal terkesan lebih kompleks!". Pertanyaan yang bagus! Jawabannya
+          sama dengan ketika kita ingin mengimplementasikan CSS secara internal
+          dan eksternal. Kita menggunakan implementasi internal jika baris atau
+          kompleksitas kode JavaScript sedikit atau rendah. Namun, perlahan kita
+          akan dibuat pusing jika jumlah kode JavaScript kita banyak serta
+          memiliki kompleksitas yang tinggi. Salah satu kelebihan implementasi
+          JavaScript secara eksternal adalah memudahkan kita untuk memperbaiki
+          laman web ketika terdapat bugs atau error dan menambah konten ketika
+          diperlukan. Kita pun dapat menggunakan berkas javascript pada multiple
+          dokumen HTML sehingga kita tidak perlu menduplikasi kode. Tentu, hal
+          ini sama seperti berkas CSS.
+        </p>
+
+        <p class="pJudul">Peletakkan Elemen Script Harus Tepat</p>
+
+        <p class="pIsiParagraf">
+          Perbedaannya adalah kode <strong>CSS</strong> diletakkan dalam elemen
+          <code>&lt;style&gt;</code> yang berada di dalam elemen
+          <code>&lt;head&gt;</code>, sedangkan kode
+          <strong>JavaScript</strong> diletakkan dalam elemen
+          <code>&lt;script&gt;</code> yang terdapat di bagian akhir elemen
+          <code>&lt;body&gt;</code>. <strong>Mengapa demikian?</strong>
+        </p>
+        <p class="pIsiParagraf">
+          Implementasi JavaScript ke dalam HTML akan berbeda jika dibandingkan
+          dengan implementasi CSS. Hal tersebut karena tag
+          <code>&lt;style&gt;</code> harus berada di dalam tag
+          <code>&lt;head&gt;</code> yang membuat elemen-elemen pada dokumen HTML
+          akan bergantung pada konten dalam CSS. Sehingga, langkah paling logis
+          adalah mempersiapkan konten CSS terlebih dahulu.
+        </p>
+        <p class="pIsiParagraf">
+          Berbeda dengan JavaScript, jika website kita tidak memerlukan
+          JavaScript untuk menampilkan halaman web, maka sebaiknya tag
+          <code>&lt;script&gt;</code> diletakkan sebelum bagian akhir dari
+          sebuah berkas HTML. <strong>Mengapa demikian?</strong> Karena jika
+          meletakkannya di awal, semua konten HTML tidak akan dijalankan sebelum
+          semua kode JavaScript yang berada pada tag
+          <code>&lt;script&gt;</code> selesai dijalankan.
+        </p>
+      </section>
+      <!-- section 2 end -->
+
+      <!-- section 3 start -->
+      <section>
+        <p class="pJudul">SECTION 3</p>
+      </section>
+      <!-- section 3 end -->
+    </main>
+    <script src="domAndBom.js">
+      // EKSTERNAL
+    </script>
     <script>
-      // ini untuk contoh dari browser object model
+      // ini untuk contoh dari browser object model INTERNAL
       // const judul = prompt("judul baru");
       // alert("ini adalah, " + judul);
     </script>
