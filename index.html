@@ -8,7 +8,7 @@
 
     <style>
       .pIsiParagraf {
-        margin: 0 30px 1.5em 70px; /* top=0, right=30px, bottom=1.5em, left=70px */
+        margin: 0 30px 1.5em 50px; /* top=0, right=30px, bottom=1.5em, left=50px */
         font-size: 1.125rem; /* 18px secara default, lebih fleksibel */
         line-height: 1.75; /* untuk readability yang lebih baik */
         text-align: justify;
@@ -41,12 +41,15 @@
           <p class="nama-logo">Belajar koding</p>
         </div>
         <ul class="ul-navbar">
-          <li class="li-navbar">Home</li>
-          <li class="li-navbar">pageOne</li>
-          <li class="li-navbar">pageTwo</li>
-          <li class="li-navbar">pageTwo</li>
-          <li class="li-navbar">pageTwo</li>
-          <li class="li-navbar">pageTwo</li>
+          <li class="li-navbar">
+            <a class="a-navbar" href="index.html">Home</a>
+          </li>
+          <li class="li-navbar">
+            <a class="a-navbar" href="bom.html">Browser Object Model</a>
+          </li>
+          <li class="li-navbar">
+            <a class="a-navbar" href="dom.html">Document Object Model</a>
+          </li>
         </ul>
       </nav>
       <!-- Navbar end -->
@@ -274,7 +277,69 @@
 
       <!-- section 3 start -->
       <section>
-        <p class="pJudul">SECTION 3</p>
+        <p class="pJudul">Browser Environment</p>
+        <p class="pIsiParagraf">
+          Selama belajar materi JavaScript yang dibahas di dalam kelas ini,
+          apakah Anda menyadari semua kode JavaScript berjalan di perangkat
+          browser dan tidak pada perangkat lainnya? Mengapa demikian? Karena
+          kita menggunakan runtime environment milik browser alias semua kode
+          JavaScript dijalankan di atas platform browser.
+        </p>
+        <p class="pIsiParagraf">
+          Pada awalnya Bahasa Pemrograman JavaScript didesain untuk berjalan di
+          browser. Namun, seiring berjalannya waktu, kini banyak platform yang
+          dapat menjalankan JavaScript di luar browser. Platform tersebut
+          menggunakan runtime environment lain seperti Node JS. Salah satu
+          contohnya adalah ketika kita menjalankan kode JavaScript pada glot.io.
+        </p>
+        <p class="pIsiParagraf">
+          Walaupun JavaScript dapat berjalan di luar browser, kita perlu tahu
+          bahwa JavaScript yang berjalan di browser memiliki fungsionalitas
+          khusus yang tidak bisa ditemukan di tempat lain. Hal tersebut karena
+          ia dijalankan di dalam browser environment.
+        </p>
+        <p class="pIsiParagraf">
+          Apa istimewanya browser environment ini? Istimewanya terletak pada
+          "peralatan-peralatan" khusus yang dapat digunakan oleh kode JavaScript
+          untuk berinteraksi dengan browser maupun dengan dokumen HTML yang kita
+          buat. Masih ingat dengan istilah Browser Object Model (BOM) dan
+          Document Object Model (DOM)? Keduanya secara khusus hanya tersedia
+          untuk JavaScript yang dijalankan dalam browser environment.
+        </p>
+        <p class="pIsiParagraf">
+          Pada gambar di bawah ini, kita melihat representasi dari objek window
+          yang hanya bisa diakses oleh JavaScript dalam browser environment.
+          Dengan melalui objek window, kita bisa mengakses DOM serta BOM.
+        </p>
+
+        <div class="picture">
+          <img src="/assets/7.png" alt="baganPohon" />
+        </div>
+        <p class="pIsiParagraf">
+          Sehingga, jika kita menjalankan kode JavaScript yang berjalan di luar
+          browser environment, maka browser object (window) dan document object
+          (document) tidak akan tersedia dan menyebabkan error. Sebagai contoh,
+          jika kita menjalankan method alert() di environment browser, alert
+          dialog akan muncul seperti berikut.
+        </p>
+
+        <div class="picture">
+          <img src="/assets/8.png" alt="" />
+        </div>
+        <div class="picture">
+          <img src="/assets/9.png" alt="" />
+        </div>
+
+        <p class="pIsiParagraf">
+          Namun, jika menggunakan glot.io, method tersebut akan melemparkan
+          error karena pada situs tersebut (compiler online) kode JavaScript
+          dijalankan di environment NodeJS, yang mana tidak tersedianya BOM
+          maupun DOM.
+        </p>
+
+        <div class="picture">
+          <img src="/assets/10.png" alt="" />
+        </div>
       </section>
       <!-- section 3 end -->
     </main>
@@ -282,7 +347,7 @@
       // EKSTERNAL
     </script>
     <script>
-      // ini untuk contoh dari browser object model INTERNAL
+      // ini untuk contoh  dari browser object model INTERNAL
       // const judul = prompt("judul baru");
       // alert("ini adalah, " + judul);
     </script>

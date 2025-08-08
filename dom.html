@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Belajar Dom and Bom</title>
+
+    <style>
+      .pIsiParagraf {
+        margin: 0 30px 1.5em 50px; /* top=0, right=30px, bottom=1.5em, left=50px */
+        font-size: 1.125rem; /* 18px secara default, lebih fleksibel */
+        line-height: 1.75; /* untuk readability yang lebih baik */
+        text-align: justify;
+        color: #2c3e50;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .pJudul {
+        margin-left: 30px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        margin-right: 10px;
+        font-size: 28px;
+        line-height: 1.5;
+        font-weight: bold;
+        color: #111827; /* abu gelap modern */
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: uppercase; /* opsional: UBAH JADI HURUF BESAR SEMUA */
+        border-bottom: 2px solid #111827; /* garis bawah untuk aksen */
+        padding-bottom: 5px;
+        width: fit-content; /* Membuat border bottom sesuai dengan ukuran content judul */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Navbar start -->
+      <nav class="navbar">
+        <div class="profile-logo">
+          <img src="/assets/domBrowser.png" alt="profile" />
+          <p class="nama-logo">Belajar koding</p>
+        </div>
+        <ul class="ul-navbar">
+          <li class="li-navbar">
+            <a class="a-navbar" href="index.html">Home</a>
+          </li>
+          <li class="li-navbar">
+            <a class="a-navbar" href="bom.html">Browser Object Model</a>
+          </li>
+          <li class="li-navbar">
+            <a class="a-navbar" href="dom.html">Document Object Model</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Navbar end -->
+    </header>
+
+    <main class="main">
+      <!-- section 1 start -->
+      <section class="section">
+        <article>
+          <p class="pJudul" id="Browser">
+            Pendahuluan Document Object Model (BOM)
+          </p>
+
+          <p class="pIsiParagraf">
+            Cara JavaScript Mengontrol Website dan Browser Setelah membaca
+            materi sebelumnya, maka akan muncul pertanyaan “Bagaimana JavaScript
+            mengontrol sebuah website atau browser?” Jawabannya ada dua, dan
+            keduanya akan kita bahas di modul ini, yakni melalui Browser Object
+            Model (BOM) dan Document Object Model (DOM). Yang pertama adalah
+            BOM. Dengan BOM, kita dapat memberikan perintah-perintah khusus ke
+            browser, misalnya melalui sebuah 'atribut' khusus milik browser
+            yakni 'window' (akan kita bahas di materi selanjutnya) sehingga kita
+            bisa membuat browser menampilkan pesan pop-up. Caranya yakni
+            menjalankan method alert() pada console milik browser. Berikut
+            contohnya:
+          </p>
+        </article>
+      </section>
+    </main>
+    <script src="domAndBom.js">
+      // EKSTERNAL
+    </script>
+    <script>
+      // ini untuk contoh  dari browser object model INTERNAL
+      // const judul = prompt("judul baru");
+      // alert("ini adalah, " + judul);
+    </script>
+  </body>
+</html>

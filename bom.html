@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Belajar Dom and Bom</title>
+
+    <style>
+      .pIsiParagraf {
+        margin: 0 30px 1.5em 50px; /* top=0, right=30px, bottom=1.5em, left=50px */
+        font-size: 1.125rem; /* 18px secara default, lebih fleksibel */
+        line-height: 1.75; /* untuk readability yang lebih baik */
+        text-align: justify;
+        color: #2c3e50;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .pJudul {
+        margin-left: 30px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 28px;
+        line-height: 1.5;
+        font-weight: bold;
+        color: #111827; /* abu gelap modern */
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: uppercase; /* opsional: UBAH JADI HURUF BESAR SEMUA */
+        border-bottom: 2px solid #111827; /* garis bawah untuk aksen */
+        padding-bottom: 5px;
+        width: fit-content; /* Membuat border bottom sesuai dengan ukuran content judul */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Navbar start -->
+      <nav class="navbar">
+        <div class="profile-logo">
+          <img src="/assets/domBrowser.png" alt="profile" />
+          <p class="nama-logo">Belajar koding</p>
+        </div>
+        <ul class="ul-navbar">
+          <li class="li-navbar">
+            <a class="a-navbar" href="index.html">Home</a>
+          </li>
+          <li class="li-navbar">
+            <a class="a-navbar" href="bom.html">Browser Object Model</a>
+          </li>
+          <li class="li-navbar">
+            <a class="a-navbar" href="dom.html">Document Object Model</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Navbar end -->
+    </header>
+
+    <main class="main">
+      <!-- section 1 start -->
+      <section class="section">
+        <article>
+          <p class="pJudul" id="Browser">
+            Pendahuluan Browser Object Model (BOM)
+          </p>
+
+          <p class="pIsiParagraf">
+            Setiap browser menyediakan apa yang disebut Browser Object Model
+            atau BOM yang bisa kita gunakan dalam kode JavaScript kita. Dalam
+            browser, BOM ini diwakilkan oleh sebuah objek bernama window. Mari
+            kita ketik window pada console browser dan lihat method dan method
+            apa saja yang tersedia melalui objek ini:
+          </p>
+
+          <div class="picture">
+            <img src="/assets/11.png" alt="windowBom" />
+          </div>
+
+          <p class="pIsiParagraf">
+            Melalui objek window inilah kode JavaScript kita bisa mengakses
+            berbagai method dan atribut yang bisa membantu kita membuat halaman
+            web menjadi lebih interaktif. Kemungkinan Anda akan tertegun melihat
+            begitu banyak method serta atribut. Akan tetapi, Anda tidak
+            diharapkan untuk menghafal semuanya karena pada materi berikutnya
+            kita cukup membahas 3 method paling dasar yakni alert(), prompt(),
+            dan objek console.
+          </p>
+        </article>
+      </section>
+      <!-- section 1 end -->
+
+      <!-- section 2 start -->
+      <section>
+        <p class="pJudul">anggota BOM :</p>
+        <p class="pIsiParagraf">
+          Pada materi ini, kita akan membahas lebih dalam mengenai tiga method
+          dari BOM. Ketiganya adalah alert(), prompt(), dan diakhiri dengan
+          objek console.
+        </p>
+        <p class="pJudul">1. Method alert</p>
+        <p class="pIsiParagraf">
+          alert() merupakan salah satu method BOM yang menerima satu parameter
+          opsional berupa data string yang akan ditampilkan melalui sebuah
+          pop-up browser. Contohnya, jika kita ingin menampilkan sebuah pesan
+          berisi string "Halo, user!" menggunakan console browser, caranya
+          sebagai berikut:
+        </p>
+
+        <div class="picture">
+          <img src="/assets/12.png" alt="" />
+        </div>
+        <div class="picture">
+          <img src="/assets/13.png" alt="" />
+        </div>
+        <div class="picture">
+          <img src="/assets/14.png" alt="" />
+        </div>
+        <div class="picture">
+          <img src="/assets/15.png" alt="" />
+        </div>
+
+        <p class="pIsiParagraf">
+          Keren, kan? Kita bisa menampilkan pesan yang telah ditentukan melalui
+          JavaScript. Namun, ada satu hal yang perlu kita ingat saat menggunakan
+          alert(), yakni ketika pop-up muncul, user tidak bisa berinteraksi
+          dengan bagian lain dari halaman web sampai pop-up tersebut ditutup.
+        </p>
+      </section>
+      <!-- section 2 end -->
+
+      <!-- section 3 start -->
+      <section>
+        <p class="pJudul">2. Method Prompt</p>
+        <p class="pIsiParagraf">
+          Sebelumnya kita telah mempelajari penggunaan method alert() untuk
+          menampilkan pesan dalam dialog browser. Nah, selain menampilkan pesan,
+          kita juga akan belajar cara mengambil data input dari user melalui
+          dialog browser, yaitu prompt(). Method ini akan menampilkan sebuah
+          dialog browser yang meminta user untuk mengisi kolom inputnya. Karena
+          bisa menangkap input dari user, method ini memiliki lebih banyak
+          fungsionalitas ketimbang alert(). Yuk, kita bahas satu-satu.
+        </p>
+        <p class="pJudul">Nilai kembalian dari prompt</p>
+        <p class="pIsiParagraf">
+          Jika kita lihat, sebenarnya method alert() mengembalikan sebuah value
+          berupa undefined. Namun, prompt() akan mengembalikan sebuah nilai
+          sesuai dengan inputan user. Sebagai contoh, mari jalankan kode berikut
+          pada console browser.
+        </p>
+
+        <div class="picture">
+          <img src="/assets/16.png" alt="" />
+        </div>
+
+        <p class="pIsiParagraf">
+          Kita bisa melihat bahwa nilai yang tersimpan di variabel pesanInput
+          sesuai dengan input yang diberikan user, yakni "Aku suka belajar
+          koding!". Jika user tidak mengisi apa pun dan tetap menekan tombol
+          "OK", maka nilai yang diberikan hanya string kosong.
+        </p>
+
+        <p class="pIsiParagraf">
+          Pada contoh di atas, kita telah menekan tombol "OK", tetapi apa yang
+          terjadi jika kita menekan tombol "Cancel"? Jika kita menekan tombol
+          "Cancel", justru nilai yang dikembalikan adalah null. Silahkan coba
+          kembali contoh di atas tetapi kali ini tekan tombol "Cancel", nanti
+          nilai dari variabel pesanInput akan bernilai null.
+        </p>
+        <p class="pIsiParagraf">
+          Ada satu hal yang perlu kita ingat selama menggunakan prompt(), yakni
+          nilai apa pun yang dimasukkan oleh user akan diproses dan dikembalikan
+          menjadi data string. Silakan jalankan kode berikut pada console
+          browser.
+        </p>
+        <div class="picture">
+          <img src="/assets/17.png" alt="" />
+        </div>
+
+        <p class="pIsiParagraf">
+          Hal ini perlu kita ingat baik-baik. Kode tidak bisa menduga bahwa
+          variabel pesanInput merupakan string atau number, ia akan tetap
+          mengeluarkan string. Meskipun demikian, kita bisa cast atau parse
+          hasilnya ke tipe data tertentu. Namun, harap lebih teliti karena jika
+          kita salah melakukan parse ke tipe data maka akan menghasilkan NaN.
+          Sebagai contoh, kita ingin mendapatkan value number dari prompt() maka
+          kita bisa menggunakan cara ini.
+        </p>
+
+        <div class="picture">
+          <img src="/assets/18.png" alt="" />
+        </div>
+
+        <p class="pJudul">Memberikan Nilai Default untuk prompt</p>
+
+        <p class="pIsiParagraf">
+          Terdapat satu parameter lagi yang bisa kita masukkan ke prompt(), di
+          mana parameter ini berguna sebagai nilai alternatif. Mari kita
+          jalankan kode berikut.
+        </p>
+
+        <div class="picture">
+          <img src="/assets/19.png" alt="" />
+        </div>
+
+        <p class="pIsiParagraf">
+          Terdapat satu hal penting, yaitu ketika dialog box dari prompt()
+          muncul, maka kita tidak bisa berinteraksi dengan komponen lain pada
+          halaman web sampai dialog box tersebut ditutup. Hal ini sama halnya
+          dengan alert(). parameter John doe akan menjadi default prompt.
+        </p>
+      </section>
+      <!-- section 3 end -->
+    </main>
+    <script src="domAndBom.js">
+      // EKSTERNAL
+    </script>
+    <script>
+      // ini untuk contoh  dari browser object model INTERNAL
+      // const judul = prompt("judul baru");
+      // alert("ini adalah, " + judul);
+    </script>
+  </body>
+</html>
