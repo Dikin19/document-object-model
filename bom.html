@@ -209,8 +209,76 @@
         </p>
       </section>
       <!-- section 3 end -->
+
+      <!-- section 4 start -->
+      <section>
+        <p class="pJudul">Anggota BOM: console</p>
+        <p class="pIsiParagraf">
+          Akhirnya kita sampai pada pembahasan objek console . Objek ini
+          merupakan peralatan yang wajib diketahui oleh semua Front-End Web
+          Developer. Mengapa demikian? Hal ini karena objek console memberikan
+          kita akses ke fitur debugging alias peralatan-peralatan yang bisa
+          membantu menghilangkan bug yang bersembunyi di dalam kode JavaScript.
+          Tentunya, Anda masih ingat, kan? Jika ingin menampilkan sebuah nilai
+          ke console browser, kita dapat menggunakan method log().
+        </p>
+
+        <div class="picture">
+          <img src="/assets/20.png" alt="" />
+        </div>
+        <p class="pIsiParagraf">
+          // Silakan aktifkan kode di bawah ini dengan hapus komentar untuk
+          melihat hasilnya // console.log('Ini adalah console log'); //
+          console.info('Ini adalah console info'); // console.warn('Ini adalah
+          console warn'); // console.error('Ini adalah console error'); jalan
+          kan difile JavaScript.
+        </p>
+
+        <p class="pJudul">Cara Memanggil Anggota BOM</p>
+        <p class="pIsiParagraf">
+          Sebelum kita lanjut ke materi berikutnya, kita perlu membahas satu hal
+          terlebih dahulu. Ketika kalian ingat akan peraturan sintaks
+          JavaScript, bukankah memanggil properti atau sebuah method dari suatu
+          objek perlu menyertakan nama objek dan diikuti oleh nama properti atau
+          functionnya? Hal ini benar dan berlaku untuk BOM yang diwakili oleh
+          object window pada environment browser. Supaya lebih tergambarkan,
+          perhatikan dua baris kode ini.
+        </p>
+        <p class="pIsiParagraf">
+          //Cara Memanggil Anggota BOM // Cara pertama // window.alert('Hello
+          World'); // Cara kedua // alert('Hello World');
+        </p>
+        <p class="pIsiParagraf">
+          Kedua cara di atas tidak memiliki perbedaan dan valid, yang mana cara
+          pertama secara eksplisit memerintah kode JavaScript untuk memanggil
+          method alert() milik objek window. Namun, cara yang kedua tidak
+          menyebutkan objek window untuk menampilkan alert. Lalu, mengapa cara
+          kedua tetap bisa dilakukan? Hal ini karena properti dan method yang
+          dimiliki window bersifat global. Walau cara kedua terkesan lebih
+          singkat, kita harus tetap hati-hati karena jika pada scope sebuah
+          berkas .js terdapat nama fungsi yang sama, maka pesan pada pop-up
+          tidak akan muncul. Contohnya berikut.
+        </p>
+        <p class="pIsiParagraf">
+          function alert(nama) { console.log('Hati-hati, ' + nama); }
+          alert('Chewbacca'); // Output: Hati-hati, Chewbacca // Output di atas
+          akan tercetak ke console browser window.alert('Chewbacca'); // Output:
+          Hati-hati, Chewbacca // Output di atas akan tetap tercetak pada
+          console browser
+        </p>
+        <p class="pIsiParagraf">
+          Catatan: Sebetulnya, interactive code di atas akan memunculkan alert
+          browser jika menjalankan window.alert(). Padahal, seharusnya tidak ada
+          alert browser muncul karena tergantikan dengan function alert yang
+          terbuat. Oleh karena itu, Anda dapat mencobanya secara mandiri di
+          browser untuk membuktikannya dengan benar. Jadi, harap hati-hati jika
+          kita mendefinisikan sebuah method dengan nama yang sama dengan method
+          milik window.
+        </p>
+      </section>
+      <!-- section 4 end -->
     </main>
-    <script src="domAndBom.js">
+    <script src="bom.js">
       // EKSTERNAL
     </script>
     <script>

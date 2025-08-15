@@ -35,3 +35,28 @@
 // Silakan hapus dua komentar di bawah ini untuk melihat hasilnya
 // let name = prompt('Silakan masukkan nama Anda!', 'John Doe');
 // console.log(name);
+
+// Silakan aktifkan kode di bawah ini dengan hapus komentar untuk melihat hasilnya
+// console.log('Ini adalah console log');
+// console.info('Ini adalah console info');
+// console.warn('Ini adalah console warn');
+// console.error('Ini adalah console error');
+
+//Cara Memanggil Anggota BOM
+// Cara pertama
+// window.alert('Hello World');
+// Cara kedua
+// alert('Hello World');
+
+// alert hanya muncul di browser console tanpa pop up
+// function alert(nama) {
+//   console.log('Hati-hati, ' + nama);
+// }
+ 
+// Silakan aktifkan kode di bawah ini dengan hapus komentar untuk melihat hasilnya
+
+// 1. Output di bawah akan tercetak ke console browser
+// alert('Chewbacca'); // Output: Hati-hati, Chewbacca
+ 
+// 2. Output di bawah akan tetap tercetak pada console browser
+// window.alert('Chewbacca'); // Output: Hati-hati, Chewbacca
